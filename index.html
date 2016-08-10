@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Voice Player</title>
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+	<!-- vioce element -->
+	<link rel="import" href="bower_components/voice-elements/dist/voice-player.html">
+</head>
+<body>
+<div class="container jumbotron">
+		<voice-player id="voice-player" accent="en-US" text="">
+			<div class="input-group">
+				<input type="text" name="input-group" id="player-input" class="form-control" placeholder="Type here ...">
+			</input>
+			<span class="input-group-btn">
+				<button class="btn btn-primary" id="player-play">
+					<i class="glyphicon glyphicon-play">
+
+					</i>
+				</button>
+			</span>
+		</div>
+	</div>
+
+	<!-- jquery -->
+	<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8" >
+	</script>
+
+	<!-- jquery bootstrap -->
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer>
+	</script>
+
+	<script>
+		$(function(){
+			playVoice("Hello, I'm a machine!.");
+			$('#player-play').click(function(){
+				playVoice($('#player-input').val() != '' ? $('#player-input').val() : 'Type any word please!.');
+			})
+		})
+
+		function playVoice(input){
+			var voice = document.querySelector('#voice-player');
+			voice.setAttribute('text', input);
+			voice.speak();
+		}
+	</script>
+</body>
+</html>
