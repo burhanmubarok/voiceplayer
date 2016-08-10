@@ -1,0 +1,23 @@
+{
+  "name": "voiceplayer",
+  "authors": [
+    "burhanmubarok@gmail.com <burhanmubarok@gmail.com>"
+  ],
+  "description": "Convert text to voice",
+  "main": "index.html",
+  "keywords": [
+    "convert",
+    "text",
+    "to",
+    "voice"
+  ],
+  "license": "GPLv3",
+  "homepage": "burhanmubarok.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
